@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419863287288",
+    "project_id": "fir-lite-5d401",
+    "storage_bucket": "fir-lite-5d401.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419863287288:android:630a52de49dae53800320d",
+        "android_client_info": {
+          "package_name": "com.example.cursofirebaselite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7YITuKQN3_nUsYXFYevKPYfcX1HcaT6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
