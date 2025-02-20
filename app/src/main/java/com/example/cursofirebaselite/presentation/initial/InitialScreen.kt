@@ -38,7 +38,7 @@ import com.example.cursofirebaselite.ui.theme.ShapeButton
 
 @Preview
 @Composable
-fun InitialScreen() {
+fun InitialScreen(navigateToLogin: () -> Unit = {}, navigateToSignUp: () -> Unit = {}) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -66,7 +66,7 @@ fun InitialScreen() {
         )
         Spacer(modifier = Modifier.weight(1f))
         Button(
-            onClick = { },
+            onClick = { navigateToSignUp() },
             modifier = Modifier
                 .fillMaxWidth()
                 .height(48.dp)
@@ -90,7 +90,7 @@ fun InitialScreen() {
         Text(
             text = "Login In",
             color = Color.White,
-            modifier = Modifier.padding(24.dp),
+            modifier = Modifier.padding(24.dp).clickable { navigateToLogin() },
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.weight(1f))
