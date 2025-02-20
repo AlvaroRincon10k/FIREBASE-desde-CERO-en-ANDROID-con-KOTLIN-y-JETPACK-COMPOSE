@@ -8,22 +8,23 @@ import androidx.navigation.compose.composable
 import com.example.cursofirebaselite.presentation.initial.InitialScreen
 import com.example.cursofirebaselite.presentation.login.LoginScreen
 import com.example.cursofirebaselite.presentation.signup.SignUpScreen
+import com.google.firebase.auth.FirebaseAuth
 
 @Composable
-fun NavigationWrapper(navHostController: NavHostController) {
+fun NavigationWrapper(navHostController: NavHostController, auth: FirebaseAuth) {
 
     NavHost(navController = navHostController, startDestination = "initial") {
         composable("initial") {
             InitialScreen(
-                navigateToLogin = {navHostController.navigate("logIn")},
-                navigateToSignUp = {navHostController.navigate("SignUp")},
+                navigateToLogin = { navHostController.navigate("logIn") },
+                navigateToSignUp = { navHostController.navigate("SignUp") },
             )
         }
         composable("logIn") {
-            LoginScreen()
+            LoginScreen(auth)
         }
         composable("signUp") {
-            SignUpScreen()
+            SignUpScreen(auth)
         }
     }
 }
