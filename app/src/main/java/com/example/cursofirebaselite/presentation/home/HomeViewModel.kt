@@ -103,4 +103,10 @@ class HomeViewModel : ViewModel() {
         val ref = database.reference.child("player")
         ref.setValue(null)
     }
+
+    fun addPlayer(artist: Artist) {
+        val ref = database.reference.child("player")
+        val player = Player(artist = artist, play = true)
+        ref.setValue(player)
+    }
 }

@@ -56,7 +56,7 @@ fun HomeScreen(viewModel: HomeViewModel = HomeViewModel()) {
 
         LazyRow {
             items(artists.value) {
-                ArtistItem(it)
+                ArtistItem(artist = it, onItemSelected = { viewModel.addPlayer(it) })
             }
         }
 
@@ -110,8 +110,10 @@ fun PlayerComponent(
 
 
 @Composable
-fun ArtistItem(artist: Artist) {
-    Column(horizontalAlignment = Alignment.CenterHorizontally) {
+fun ArtistItem(artist: Artist, onItemSelected: (Artist) -> Unit) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.clickable { onItemSelected(artist) }) {
         AsyncImage(
             modifier = Modifier
                 .size(60.dp)
@@ -132,5 +134,5 @@ fun ArtistItemPrevuiew() {
         "El mejor",
         "https://images.dog.ceo/breeds/spaniel-irish/n02102973_87.jpg"
     )
-    ArtistItem(artist = artist)
+    ArtistItem(artist = artist) {}
 }
